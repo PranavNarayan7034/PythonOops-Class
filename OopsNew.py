@@ -224,16 +224,16 @@
 
 # Inheritance 
 
-class Employee:
-    def Display(self):
-        print("Display fn executed in Employee Class")
+# class Employee:
+#     def Display(self):
+#         print("Display fn executed in Employee Class")
 
-class Developer:
-    def Show(self):
-        print("Show fn executed inside Developer class")
+# class Developer:
+#     def Show(self):
+#         print("Show fn executed inside Developer class")
 
-h1 = Employee()
-h2 = Developer() 
+# h1 = Employee()
+# h2 = Developer() 
 
 # h2.Display()  # Error
 # h1.Display()
@@ -243,22 +243,52 @@ h2 = Developer()
 # *************************************************
 
 
-class Employee:
-    def Display(self):
-        print("Display fn executed in Employee Class")
+# class Employee:
+#     def Display(self):
+#         print("Display fn executed in Employee Class")
 
-class Developer(Employee):     
+# class Developer(Employee):     
     # inheritance : Inheriting one class properties 
     # in to another
     # Developer = child class 
-    # Employee = parent class 
-    def Show(self):
-        print("Show fn executed inside Developer class")
+    # Employee = parent class / super class 
+    # def Show(self):
+    #     print("Show fn executed inside Developer class")
 
 # h1 = Employee()
-h2 = Developer()
+# h2 = Developer()
 
-h2.Show()
-h2.Display()
+# h2.Show()
+# h2.Display()
 
 # h1.Show()
+
+# ************************************************
+
+
+class Employee: 
+    def __init__(self,id,name,salary):
+        self.Empid = id 
+        self.Empname = name
+        self.Salary = salary
+
+class Developer(Employee):
+    def __init__(self,id,name,salary,Lang,Projects):
+        super().__init__(id,name,salary)
+        self.Languages = Lang 
+        self.completedProject = Projects
+
+class Tester(Employee):
+    def __init__(self,id,name,salary,tools):
+        super().__init__(id,name,salary)
+        self.Tools = tools
+
+class Support:
+    pass 
+
+per1 = Developer(1045,"Sera",56800,["Python","java" ,"c"] ,10) 
+per2 = Tester(1046,"Sanjith",42000,["Jira",'Selenium'])
+per3 = Support()
+
+print(per1.__dict__)
+print(per2.__dict__)
