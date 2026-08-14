@@ -156,7 +156,7 @@
 # prd2.discountPrice()
 
 
-
+# Encapsulation 
 
 # class Car:
     # maxSpeed = 150
@@ -189,32 +189,31 @@
 # private Methods 
 
 
-class Employee:
-    def __init__(self,id,fname,lname,salary):
-        self.id = id
-        self.FirstName = fname
-        self.LastName = lname 
-        self.Salary = salary
-        # self.Email = self.GenerateEmail()
-        self.Email = self.__GenerateEmail()
+# class Employee:
+#     def __init__(self,id,fname,lname,salary):
+#         self.id = id
+#         self.FirstName = fname
+#         self.LastName = lname 
+#         self.Salary = salary
+#         # self.Email = self.GenerateEmail()
+#         self.Email = self.__GenerateEmail()
 
-    def GenerateEmail(self):
-        # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
-        return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
+#     def GenerateEmail(self):
+#         # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
+#         return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
 
-    def __GenerateEmail(self):      # private methods
-            # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
-            return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
+#     def __GenerateEmail(self):      # private methods
+#             # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
+#             return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
 
-emp1 = Employee(55,"David","James",58900)
-emp2 = Employee(85,"Catherine","Teresa",78500)
-
+# emp1 = Employee(55,"David","James",58900)
+# emp2 = Employee(85,"Catherine","Teresa",78500)
 # print(emp1.__dict__)
 # emp1.GenerateEmail()
 # print(emp2.__dict__)
 # emp2.GenerateEmail()
 
-print(emp1.__dict__)
+# print(emp1.__dict__)
 # x = emp2.GenerateEmail()
 # print(x)
 
@@ -222,3 +221,44 @@ print(emp1.__dict__)
 # print(x)
 
 
+
+# Inheritance 
+
+class Employee:
+    def Display(self):
+        print("Display fn executed in Employee Class")
+
+class Developer:
+    def Show(self):
+        print("Show fn executed inside Developer class")
+
+h1 = Employee()
+h2 = Developer() 
+
+# h2.Display()  # Error
+# h1.Display()
+# h2.Show()
+# h1.Show()    # Error 
+
+# *************************************************
+
+
+class Employee:
+    def Display(self):
+        print("Display fn executed in Employee Class")
+
+class Developer(Employee):     
+    # inheritance : Inheriting one class properties 
+    # in to another
+    # Developer = child class 
+    # Employee = parent class 
+    def Show(self):
+        print("Show fn executed inside Developer class")
+
+# h1 = Employee()
+h2 = Developer()
+
+h2.Show()
+h2.Display()
+
+# h1.Show()
