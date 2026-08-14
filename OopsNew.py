@@ -158,30 +158,67 @@
 
 
 
-class Car:
+# class Car:
     # maxSpeed = 150
-    __maxSpeed = 150    # private variable / private Attribute : Can't update/edit outside class
-    def __init__(self,name,fuelType):
-        self.carName = name
-        self.Fuel = fuelType
+    # __maxSpeed = 150    # private variable / private Attributes : Can't update/edit outside class
+    # def __init__(self,name,fuelType):
+    #     self.carName = name
+    #     self.Fuel = fuelType
 
-    def Start(self):
-        print("Car engine is Started ... Enjoy your Drive")
-    def MaximumSpeed(self):
-        # print(f"Your Car Reached maximum speed : {self.maxSpeed}")
-        print(f"Your Car Reached maximum speed : {self.__maxSpeed}")
-    def Stop(self):
-        print("Car engine Stopped , Hope you enjoy the Drive")
+    # def Start(self):
+    #     print("Car engine is Started ... Enjoy your Drive")
+    # def MaximumSpeed(self):
+    #     # print(f"Your Car Reached maximum speed : {self.maxSpeed}")
+    #     print(f"Your Car Reached maximum speed : {self.__maxSpeed}")
+    # def Stop(self):
+    #     print("Car engine Stopped , Hope you enjoy the Drive")
 
-car1 = Car("Tata Harrier","Ev")
-car2 = Car("BMW M4","Petrol")
+# car1 = Car("Tata Harrier","Ev")
+# car2 = Car("BMW M4","Petrol")
 
 # car1.Start()
 # car1.MaximumSpeed()
 # car1.Stop()
 
-car2.Start()
+# car2.Start()
 # car2.maxSpeed = 220
-car2.__maxSpeed = 200
-car2.MaximumSpeed()
-car2.Stop()
+# car2.__maxSpeed = 200
+# car2.MaximumSpeed()
+# car2.Stop()
+
+# private Methods 
+
+
+class Employee:
+    def __init__(self,id,fname,lname,salary):
+        self.id = id
+        self.FirstName = fname
+        self.LastName = lname 
+        self.Salary = salary
+        # self.Email = self.GenerateEmail()
+        self.Email = self.__GenerateEmail()
+
+    def GenerateEmail(self):
+        # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
+        return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
+
+    def __GenerateEmail(self):      # private methods
+            # print(f'{self.FirstName}{self.LastName}{self.id}@companymail.com')
+            return f'{self.FirstName}{self.LastName}{self.id}@companymail.com'
+
+emp1 = Employee(55,"David","James",58900)
+emp2 = Employee(85,"Catherine","Teresa",78500)
+
+# print(emp1.__dict__)
+# emp1.GenerateEmail()
+# print(emp2.__dict__)
+# emp2.GenerateEmail()
+
+print(emp1.__dict__)
+# x = emp2.GenerateEmail()
+# print(x)
+
+# x = emp2.__GenerateEmail()
+# print(x)
+
+
