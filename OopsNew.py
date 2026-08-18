@@ -507,25 +507,55 @@ h2 = Developer()
 # static method: 
 # methods that doesn't require any self/ cls attributes to execute fn 
 
-class Student:
-    college = "Abc College"
-    totalStudents = 350
-    def __init__(self,name,age,main):
-        self.StudentName = name 
-        self.StudentAge = age 
-        self.MainSub = main 
+# class Student:
+#     college = "Abc College"
+#     totalStudents = 350
+#     def __init__(self,name,age,main):
+#         self.StudentName = name 
+#         self.StudentAge = age 
+#         self.MainSub = main 
 
-    @staticmethod
-    def Cacluator(a,b):
-        return a + b
+#     @staticmethod
+#     def Cacluator(a,b):
+#         return a + b
 
-    @staticmethod
-    def Info():
-        print("Welcome to Student class in python OOPS")
+#     @staticmethod
+#     def Info():
+#         print("Welcome to Student class in python OOPS")
 
-s1 = Student("Rahul",23,"Mechanical")
-s2 = Student("Mike",21,"Chemistry")
-s3 = Student("Sana",22,"Cs")
+# s1 = Student("Rahul",23,"Mechanical")
+# s2 = Student("Mike",21,"Chemistry")
+# s3 = Student("Sana",22,"Cs")
 
-print(Student.Cacluator(10,50))
-Student.Info()
+# print(Student.Cacluator(10,50))
+# Student.Info()
+
+
+# Polymorphism : Means the same method can behave differently depending on object 
+
+class India: 
+    def Capital(self):
+        print("Capital of INDIA = NewDelhi")
+class England:
+    def Capital(self):
+        print("Capital of ENGLAND = London") 
+class UAE:
+    def Capital(self):
+        print("Capital of UAE = Abudabi")
+class Spain:
+    def Capital(self):
+        print("Capital of SPAIN = Madrid") 
+class France:
+    def Capital(self):
+        print("Capital of FRANCE = Paris")
+P1 = India()
+P2 = England()
+P3 = UAE()
+P4 = Spain()
+P5 = France()
+# P2.Capital()
+# P3.Capital()
+# P5.Capital()
+
+for i in (P1,P2,P3,P4,P5):
+    i.Capital()
