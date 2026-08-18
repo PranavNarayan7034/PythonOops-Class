@@ -243,20 +243,20 @@
 # *************************************************
 
 
-# class Employee:
-#     def Display(self):
-#         print("Display fn executed in Employee Class")
+class Employee:
+    def Display(self):
+        print("Display fn executed in Employee Class")
 
-# class Developer(Employee):     
+class Developer(Employee):     
     # inheritance : Inheriting one class properties 
     # in to another
     # Developer = child class 
     # Employee = parent class / super class 
-    # def Show(self):
-    #     print("Show fn executed inside Developer class")
+    def Show(self):
+        print("Show fn executed inside Developer class")
 
 # h1 = Employee()
-# h2 = Developer()
+h2 = Developer()
 
 # h2.Show()
 # h2.Display()
@@ -266,29 +266,238 @@
 # ************************************************
 
 
-class Employee: 
-    def __init__(self,id,name,salary):
-        self.Empid = id 
-        self.Empname = name
-        self.Salary = salary
+# class Employee: 
+#     def __init__(self,id,name,salary):
+#         self.Empid = id 
+#         self.Empname = name
+#         self.Salary = salary
 
-class Developer(Employee):
-    def __init__(self,id,name,salary,Lang,Projects):
-        super().__init__(id,name,salary)
-        self.Languages = Lang 
-        self.completedProject = Projects
+# class Developer(Employee):
+#     def __init__(self,id,name,salary,Lang,Projects):
+#         super().__init__(id,name,salary)
+#         self.Languages = Lang 
+#         self.completedProject = Projects
 
-class Tester(Employee):
-    def __init__(self,id,name,salary,tools):
-        super().__init__(id,name,salary)
-        self.Tools = tools
+# class Tester(Employee):
+#     def __init__(self,id,name,salary,tools):
+#         super().__init__(id,name,salary)
+#         self.Tools = tools
 
-class Support:
-    pass 
+# class Support:
+#     pass 
 
-per1 = Developer(1045,"Sera",56800,["Python","java" ,"c"] ,10) 
-per2 = Tester(1046,"Sanjith",42000,["Jira",'Selenium'])
-per3 = Support()
+# per1 = Developer(1045,"Sera",56800,["Python","java" ,"c"] ,10) 
+# per2 = Tester(1046,"Sanjith",42000,["Jira",'Selenium'])
+# per3 = Support()
 
-print(per1.__dict__)
-print(per2.__dict__)
+# print(per1.__dict__)
+# print(per2.__dict__)
+
+# Types of inheritance
+
+# 1. single inheritance : 
+# One child class inheriting from one pararent class
+
+# class Employee:
+#     def Display(self):
+#         print("Display fn executed in Employee Class")
+
+# class Developer(Employee):      
+#     def Show(self):
+#         print("Show fn executed inside Developer class")
+
+# h2 = Developer() 
+# h2.Show()
+# h2.Display()
+
+
+
+
+
+
+
+
+# 2. Multiple inhertiance 
+# one child class inherits from multiple parent class 
+
+# class Father:
+#     def Skills(self):
+#         print("Drawing")
+
+# class Mother:
+#     def Talent(self):
+#         print("Singing")
+
+# class Child(Mother,Father):
+#     def info(self):
+#         print("I am a child")
+
+# p2 = Mother()
+# p2.Talent()
+# p2.info()
+# p2.Skills()
+
+# p1 = Child()
+# p1.info()
+# p1.Talent()
+# p1.Skills()
+
+# 3.Multi-level inheritance 
+
+# class Grandparents:
+#     def Car(self):
+#         print("Grand parent's Car")
+
+# class Parents(Grandparents):
+#     def House(self):
+#         print("Parent's House")
+
+# class Child(Parents):
+#     def Bike(self):
+#         print("My bike")
+
+# # h1 = Parents()
+# # h1.House()
+# # h1.Car()
+# # h1.Bike()
+
+# h2 = Child()
+# h2.Bike()
+# h2.House()
+# h2.Car()
+
+# 4.Hierarchilal inheritance 
+# Multiple child classes inherit from one parent class 
+
+# class Animal:
+#     def Property(self):
+#         print("They are Eating Food")
+
+# class Dog(Animal):
+#     def Bark(self):
+#         print("Dog's are BARKING")
+
+# class Cat(Animal):
+#     def Meow(self):
+#         print("Cat's are MEOWING")
+
+
+# A1 = Cat()
+# A1.Meow()
+# A1.Property()
+# A1.Bark()
+
+# 5. Hybrid inheritance 
+
+
+# Different types of methods 
+# 1. Instance method / regular methods 
+# Methods that works with object 
+
+# class Student:
+#     collegeName = "Abc College"
+#     def __init__(self,name,age,main):
+#         self.StudentName = name 
+#         self.StudentAge = age 
+#         self.MainSub = main 
+#     def Display(self):
+#         print(f"Display method is calling :, {self.StudentName}")
+
+# s1 = Student("Rahul",23,"Mechanical")
+# print(s1.__dict__)
+# s1.Display()
+# print(s1.collegeName)
+# print(Student.collegeName)
+# Student.Display()      # Error 
+
+
+
+
+
+
+
+
+
+# 2. Class Methods 
+# works with class, we can call class methods 
+# using class rather than object 
+
+# class Student:
+#     collegeName = "Abc College"
+#     def __init__(self,name,age,main):
+#         self.StudentName = name 
+#         self.StudentAge = age 
+#         self.MainSub = main 
+#     def Display(self):
+#         print(f"Display method is calling :, {self.StudentName}")
+
+#     @classmethod
+#     def CollegeInfo(cls):    # cls = Student
+#         print("This Class Method print your college info")
+#         print(f"Your college Name = {cls.collegeName}")
+
+# s1 = Student("Rahul",23,"Mechanical")
+# Student.CollegeInfo()
+
+
+
+
+
+
+
+# class Student:
+#     collegeName = "Abc College"
+#     TotalStudent = 350 
+#     ParticipationFee = 100
+#     def __init__(self,name,age,main):
+#         self.StudentName = name 
+#         self.StudentAge = age 
+#         self.MainSub = main 
+#     @classmethod
+#     def updateFee(cls,Amount):      # cls = Student, Amount = 250
+#         cls.ParticipationFee = Amount
+
+# s1 = Student("Rahul",23,"Mechanical")
+# s2 = Student("Mike",21,"Chemistry")
+# s3 = Student("Sana",22,"Cs")
+
+# s1.ParticipationFee = 200
+# print(s1.ParticipationFee)
+# print(s2.ParticipationFee)
+# print(s3.ParticipationFee)
+# print(Student.ParticipationFee)
+
+# Student.updateFee(250)
+# print(s1.ParticipationFee)
+# print(s2.ParticipationFee)
+# print(s3.ParticipationFee)
+
+
+# Q: Create a class method find the total 
+# Amount we got from student in Event 
+
+# Student.TotalAmount()  ==> 350*100
+
+
+class Student:
+    collegeName = "Abc College"
+    TotalStudent = 350 
+    ParticipationFee = 100
+
+    def __init__(self,name,age,main):
+        self.StudentName = name 
+        self.StudentAge = age 
+        self.MainSub = main 
+
+    def displayStudentinfo(self):       # REGULAR METHOD / INSTANCE METHOD
+        print(f"Student name: {self.StudentName}, college = {self.collegeName}")
+
+    @classmethod                        # CLASS METHOD
+    def TotalAmount(cls):  # cls = Student
+        print(f"Total Amount collected from student side = {cls.TotalStudent * cls.ParticipationFee}")
+
+s1 = Student("Rahul",23,"Mechanical")
+s2 = Student("Mike",21,"Chemistry")
+s3 = Student("Sana",22,"Cs")
+
+Student.TotalAmount()
