@@ -479,25 +479,53 @@ h2 = Developer()
 # Student.TotalAmount()  ==> 350*100
 
 
-class Student:
-    collegeName = "Abc College"
-    TotalStudent = 350 
-    ParticipationFee = 100
+# class Student:
+#     collegeName = "Abc College"
+#     TotalStudent = 350 
+#     ParticipationFee = 100
 
+#     def __init__(self,name,age,main):
+#         self.StudentName = name 
+#         self.StudentAge = age 
+#         self.MainSub = main 
+
+#     def displayStudentinfo(self):       # REGULAR METHOD / INSTANCE METHOD
+#         print(f"Student name: {self.StudentName}, college = {self.collegeName}")
+
+#     @classmethod                        # CLASS METHOD
+#     def TotalAmount(cls):  # cls = Student
+#         print(f"Total Amount collected from student side = {cls.TotalStudent * cls.ParticipationFee}")
+
+# s1 = Student("Rahul",23,"Mechanical")
+# s2 = Student("Mike",21,"Chemistry")
+# s3 = Student("Sana",22,"Cs")
+
+# Student.TotalAmount()
+
+
+
+# static method: 
+# methods that doesn't require any self/ cls attributes to execute fn 
+
+class Student:
+    college = "Abc College"
+    totalStudents = 350
     def __init__(self,name,age,main):
         self.StudentName = name 
         self.StudentAge = age 
         self.MainSub = main 
 
-    def displayStudentinfo(self):       # REGULAR METHOD / INSTANCE METHOD
-        print(f"Student name: {self.StudentName}, college = {self.collegeName}")
+    @staticmethod
+    def Cacluator(a,b):
+        return a + b
 
-    @classmethod                        # CLASS METHOD
-    def TotalAmount(cls):  # cls = Student
-        print(f"Total Amount collected from student side = {cls.TotalStudent * cls.ParticipationFee}")
+    @staticmethod
+    def Info():
+        print("Welcome to Student class in python OOPS")
 
 s1 = Student("Rahul",23,"Mechanical")
 s2 = Student("Mike",21,"Chemistry")
 s3 = Student("Sana",22,"Cs")
 
-Student.TotalAmount()
+print(Student.Cacluator(10,50))
+Student.Info()
