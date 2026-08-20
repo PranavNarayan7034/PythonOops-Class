@@ -533,29 +533,165 @@ h2 = Developer()
 
 # Polymorphism : Means the same method can behave differently depending on object 
 
-class India: 
-    def Capital(self):
-        print("Capital of INDIA = NewDelhi")
-class England:
-    def Capital(self):
-        print("Capital of ENGLAND = London") 
-class UAE:
-    def Capital(self):
-        print("Capital of UAE = Abudabi")
-class Spain:
-    def Capital(self):
-        print("Capital of SPAIN = Madrid") 
-class France:
-    def Capital(self):
-        print("Capital of FRANCE = Paris")
-P1 = India()
-P2 = England()
-P3 = UAE()
-P4 = Spain()
-P5 = France()
-# P2.Capital()
-# P3.Capital()
-# P5.Capital()
+# class India: 
+#     def Capital(self):
+#         print("Capital of INDIA = NewDelhi")
+# class England:
+#     def Capital(self):
+#         print("Capital of ENGLAND = London") 
+# class UAE:
+#     def Capital(self):
+#         print("Capital of UAE = Abudabi")
+# class Spain:
+#     def Capital(self):
+#         print("Capital of SPAIN = Madrid") 
+# class France:
+#     def Capital(self):
+#         print("Capital of FRANCE = Paris")
+# P1 = India()
+# P2 = England()
+# P3 = UAE()
+# P4 = Spain()
+# P5 = France()
+# # P2.Capital()
+# # P3.Capital()
+# # P5.Capital()
 
-for i in (P1,P2,P3,P4,P5):
-    i.Capital()
+# for i in (P1,P2,P3,P4,P5):
+#     i.Capital()
+
+
+# Abstract class
+# ABC is a class that used as a  blueprint for other classes 
+
+# from abc import ABC , abstractmethod 
+# class Bank(ABC):
+#     @abstractmethod
+#     def pay(self):
+#         pass
+
+# class CreditCard(Bank):
+#     def __init__(self,cardno,name):
+#         self.cardno = cardno
+#         self.cardname = name
+#     def pay(self):
+#         print("Credit card payment is completed")
+
+# class Onlinepayment(Bank):
+#     def Info():
+#         pass
+#     def pay(self):
+#         print("Online payment Completed")
+
+# class DebitCard(Bank):
+#     def pay(self):
+#         print("Debit card payment is completed")
+
+# p1 = CreditCard(45455645455,"Mike")
+# p2 = Onlinepayment()
+# p3 = DebitCard()
+# print(p1.__dict__)
+
+
+# Decorators in python 
+# 1.first order fn 
+# 2.higher order fn  
+# 3.closure
+# 4.decorators 
+
+# 1. First order fns : we can store fn name into a variable, 
+# and excute it while calling variable 
+
+# def Cube(x):
+#     return x**3 
+
+# print(Cube(5))
+
+# a = Cube(5)     # a = 125
+# print(a)
+
+# a = Cube          # a = Cube
+# print(a)
+# print(a(5))
+
+
+# 2. Higher order fn : Takes another fn as argument and returns a another fn
+# def add(x,y):
+#     return x+y 
+# def sub(x,y):
+#     return x-y
+# def mul(x,y):
+#     return x*y 
+# def div(x,y):
+#     return x/y
+ 
+# def calculate(func,x,y):   
+    # out = func(x,y)            # add(50,20)   , mul(10,30)
+    # return out
+
+    # return func(x,y)
+
+# a = calculate(add,50,20) # func = add, x = 50 , y = 20
+# print(a)
+# b = calculate(mul,10,30) # func = mul, x = 10 , y = 30
+# print(b)
+
+
+# def square(x):
+#     return x**2
+
+# def cube(x):
+#     return x**3
+
+# def myMap(fn,list):    # fn = square, list = [10,20,30,40,35,25]
+#     result = []     # result = [squre(10), square(20), square(30)...... square(25)]
+#                     # result = [100,400,900,......]
+#     for i in list:
+#         result.append(fn(i))
+#     return result
+
+# s1 = myMap(square,[10,20,30,40,35,25])
+# s2 = myMap(cube,[10,20,30,40,35,25])
+# print(s1)  
+# print(s2)  
+
+
+# closure 
+# Innerfn that are enclosed with in an outer fn
+# closure can access variable inside outer fn 
+# even though outer fn execution completed.
+
+# def outerFn():
+#     message = "Welcomet to Closure"
+#     print("Outer fn executed")
+#     def innerFn():
+#         print("Inner fn executed")
+#         print(message)
+
+#     innerFn()
+    
+# outerFn()
+# innerFn()   # error
+
+
+
+
+
+# *********************************************
+
+def outerFn():
+    message = "Welcomet to Closure"
+    print("Outer fn executed")
+    def innerFn():
+        print("Inner fn executed")
+        print(message)
+
+    return innerFn
+    
+a = outerFn()   # a = inner fn 
+print(a)
+# print("Variable a ==" ,a)
+a()
+
+
+
